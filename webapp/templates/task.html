@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block title%} Task{%endblock%}
+{%block menu%}
+      <a href="{% url 'index' %}">To the main page!</a>
+    <a href="{% url 'task_update' task.pk %}">Edit</a>
+{%endblock%}
+{%block content%}
+<div class="container">
+         <h1>Task</h1>
+      <p>Title: {{task.title}}</p>
+      <p>Description: {{task.description}}</p>
+      <p>Date: {{task.date}}</p>
+          <p>Status: {{task.status}}</p>
+
+
+</div>
+
+{%endblock%}
