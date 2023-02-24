@@ -1,32 +1,15 @@
-{%extends 'base.html'%}
-{%block title%} New Task{%endblock%}
-<div class="form">
-   {%block content%}
+{% extends "base.html" %}
 
-    <div>
-    <form action="{% url 'task_add' %}" method="post">
-        {% csrf_token %}
-        <div class="form_row">
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title">
-        </div>
-        <div class="form_row">
-            <label for="description">Description</label>
-            <textarea name="description" id="description" cols="50rows="10"></textarea>
-        </div>
-        <div class="form_row">
-            <label for="date">To do date</label>
-            <input type="date" id="date" name="date">
-        </div>
-        <select name="user_profile_color_1">
-  <option value="new">New</option>
-  <option value="In process">In process</option>
-  <option value="Done">Done</option>
-</select>
-        <div class="form_row">
-            <input type="submit">
-        </div>
+{% block title %}Create Task{% endblock %}
+
+{% block content %}
+
+    <h1>Create Task</h1>
+
+    <form method="POST" action="{% url "task_add" %}">
+
+        {% include 'partial/create.html' with button_text='Create'%}
 
     </form>
-</div>
-    {%endblock%}
+
+{% endblock %}
