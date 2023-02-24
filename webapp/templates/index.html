@@ -15,6 +15,7 @@
     <p class="card-text">Status: {{task.status}}</p>
 <a href="{% url 'task_detail' task.pk %}">View all...</a>
 <a href="{% url 'task_update' task.pk %}">Edit task...</a>
+<a href="{% url 'task_delete' task.pk %}">DELETE</a>
   </div>
     </form>
         {%endfor%}
